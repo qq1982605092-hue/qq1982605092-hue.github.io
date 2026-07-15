@@ -87,12 +87,12 @@ title: Home
   </div>
   <div class="timeline-entry">
     <h3>Java Backend Development Intern</h3>
-    <p class="entry-meta">Fanhan Information Technology (Shanghai) Co., Ltd. · 2025.03–2025.06</p>
+    <p class="entry-meta">Fanhan Information Technology · Shanghai · 2025.03–2025.06</p>
     <p>Developed and maintained backend services and supporting application interfaces.</p>
   </div>
   <div class="timeline-entry">
     <h3>Python Systems R&amp;D Intern</h3>
-    <p class="entry-meta">Youceng Intelligent Technology (Shanghai) Co., Ltd. · 2024.03–2024.08</p>
+    <p class="entry-meta">Uceng Intelligence · Shanghai · 2024.03–2024.08</p>
     <p>Built Python-based system components and data-processing workflows.</p>
   </div>
 </section>
