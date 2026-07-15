@@ -3,101 +3,62 @@ layout: default
 title: Home
 ---
 
-<section id="about" class="page-section about-section">
-  <h2>About</h2>
-  <p class="lead">I build memory and reasoning systems for embodied agents.</p>
-  <p>My current work studies long-horizon memory, model post-training, retrieval adaptation, and multimodal systems. I am interested in how these capabilities can give embodied agents more persistent context, grounded perception, and reliable decision support.</p>
-</section>
-
-<section id="selected-work" class="page-section">
-  <h2>Selected Work</h2>
-
-  {% capture dual_time_body %}
-  <ul>
-    <li>Designed a research prototype that organizes interaction evidence across event time and knowledge-update time.</li>
-    <li>Developing retrieval experiments around temporal consistency, evidence traceability, and long-horizon recall.</li>
-  </ul>
-  {% endcapture %}
-  {% include project-entry.html
-    index="01"
-    label="Research in progress"
-    title="Dual-Time Agent Memory"
-    problem="Long-horizon agents need memory structures that preserve event sequences while tracking how knowledge changes over time."
-    body=dual_time_body
-  %}
-
-  {% capture calling_agent_body %}
-  <ul>
-    <li>Built state-driven orchestration that separates dialogue stages, transition conditions, and system actions.</li>
-    <li>Worked on model post-training and production integration to make agent behavior easier to inspect and control.</li>
-  </ul>
-  {% endcapture %}
-  {% include project-entry.html
-    index="02"
-    label="Agent systems"
-    title="State-Driven AI Calling Agent"
-    problem="Production calling agents must coordinate dialogue state, business rules, model behavior, and external actions without losing control of the interaction."
-    body=calling_agent_body
-  %}
-
-  {% capture reranker_body %}
-  <ul>
-    <li>Constructed domain-focused training data and evaluation cases for relevance ranking.</li>
-    <li>Fine-tuned a Qwen3 reranker and analyzed retrieval errors to guide data and modeling revisions.</li>
-  </ul>
-  {% endcapture %}
-  {% include project-entry.html
-    index="03"
-    label="Retrieval adaptation"
-    title="Qwen3 Reranker Fine-tuning"
-    problem="Domain retrieval requires ranking models that distinguish task-specific relevance beyond general semantic similarity."
-    body=reranker_body
-  %}
-
-  {% capture perception_body %}
-  <ul>
-    <li>Integrated OCR and vision-language components to extract complementary visual and textual evidence.</li>
-    <li>Designed structured schemas and validation steps so downstream systems can consume the results consistently.</li>
-  </ul>
-  {% endcapture %}
-  {% include project-entry.html
-    index="04"
-    label="Multimodal perception"
-    title="Multimodal Structured Perception Pipeline"
-    problem="Screen and video content must be converted from pixels and text into consistent records that reasoning systems can use."
-    body=perception_body
-  %}
-</section>
-
-<section id="research-interests" class="page-section">
-  <h2>Research Interests</h2>
-  <ul class="research-questions">
-    <li>How can long-horizon agents retain useful experience while keeping changing knowledge temporally consistent?</li>
-    <li>How can reasoning and decision learning make embodied agents more adaptive, grounded, and reliable?</li>
-    <li>How should multimodal models be post-trained and evaluated for structured perception and agent use?</li>
-  </ul>
-</section>
-
-<section id="experience" class="page-section">
-  <h2>Experience</h2>
-  <div class="timeline-entry">
-    <h3>AI Algorithm Engineering Intern</h3>
-    <p class="entry-meta">Nuanwa Technology · Shanghai · 2026–Present</p>
-    <p>Developing agent memory, model post-training, and state-driven AI systems for applied workflows.</p>
+<section id="about" class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Memory × Reasoning × Embodied AI</p>
+    <h1>Systems that help agents <em>remember, reason, and act.</em></h1>
+    <p class="hero-lead">I build long-horizon memory and model post-training systems, then connect them to grounded perception and reliable decision-making for embodied agents.</p>
+    <p class="hero-links">
+      <a href="#selected-work">Explore selected work</a>
+      <a href="mailto:{{ site.author.email }}">Email</a>
+      <a href="https://github.com/{{ site.author.github }}">GitHub</a>
+      <a href="{{ site.author.cv | relative_url }}">CV</a>
+    </p>
   </div>
-  <div class="timeline-entry">
-    <h3>Python Systems R&amp;D Intern</h3>
-    <p class="entry-meta">Uceng Intelligence · Shanghai · 2024.03–2024.08</p>
-    <p>Built Python-based system components and data-processing workflows.</p>
+  {% include author-profile.html %}
+</section>
+
+<section id="selected-work" class="page-section selected-work">
+  <header class="section-heading">
+    <h2>Selected Work</h2>
+    <p>Research questions translated into working systems.</p>
+  </header>
+  <div class="project-list">
+    {% for project in site.data.projects %}
+      {% include project-entry.html project=project %}
+    {% endfor %}
   </div>
 </section>
 
-<section id="education" class="page-section">
-  <h2>Education</h2>
-  <p><strong>East China Normal University — M.S. in Computer Science, 2025–2028</strong></p>
+<section id="research" class="page-section research-questions">
+  <header class="section-heading">
+    <h2>Questions I care about</h2>
+    <p>The bridge from current work to embodied intelligence.</p>
+  </header>
+  <div class="question-grid">
+    <article><span>01 / Memory</span><p>What should an agent retain after the current interaction ends?</p></article>
+    <article><span>02 / Reasoning</span><p>How can decisions remain grounded, adaptive, and inspectable?</p></article>
+    <article><span>03 / Perception</span><p>How should multimodal evidence become reusable experience?</p></article>
+  </div>
 </section>
 
-<section id="workflow" class="page-section workflow-note">
-  <h2>Workflow</h2>
-  <p>Agent harnesses: Codex, Claude Code, and Cursor for research prototyping, code review, experiment orchestration, and reproducible engineering workflows.</p>
+<section id="experience" class="page-section experience-focus">
+  <div>
+    <h2>Experience</h2>
+    <div class="timeline-entry">
+      <h3>AI Algorithm Engineering Intern</h3>
+      <p class="entry-meta">Nuanwa Technology · Shanghai · 2026–Present</p>
+      <p>Developing Agent Memory, model post-training, and state-driven AI systems for applied workflows.</p>
+    </div>
+    <div class="timeline-entry">
+      <h3>Python Systems R&amp;D Intern</h3>
+      <p class="entry-meta">Uceng Intelligence · Shanghai · 2024.03–2024.08</p>
+      <p>Built Python system components and data-processing workflows.</p>
+    </div>
+  </div>
+  <div class="current-focus">
+    <h2>Current focus</h2>
+    <p>I am exploring how memory and post-training can support agents that operate across long horizons, perceive structured environments, and eventually learn to act in embodied settings.</p>
+    <p class="focus-tags"><span>Agent Memory</span><span>Post-training</span><span>Retrieval</span><span>Multimodal Systems</span><span>Embodied AI</span></p>
+  </div>
 </section>

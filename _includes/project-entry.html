@@ -1,9 +1,26 @@
-<article class="project-entry">
-  <div class="project-media" aria-hidden="true"><span>{{ include.index }}</span></div>
+<article class="project-entry" id="project-{{ include.project.id }}">
+  <div class="project-index" aria-hidden="true">{{ include.project.number }}</div>
+  <div
+    class="project-visual project-visual--{{ include.project.diagram }}"
+    aria-hidden="true"
+  >
+    <span></span><span></span><span></span><span></span>
+  </div>
   <div class="project-copy">
-    <p class="project-label">{{ include.label }}</p>
-    <h3>{{ include.title }}</h3>
-    <p class="project-problem">{{ include.problem }}</p>
-    {{ include.body }}
+    <p class="project-label">{{ include.project.label }}</p>
+    <h3>{{ include.project.title }}</h3>
+    <p class="project-question">{{ include.project.question }}</p>
+    <ul>
+      {% for contribution in include.project.contributions %}
+        <li>{{ contribution }}</li>
+      {% endfor %}
+    </ul>
+    {% if include.project.links %}
+      <p class="project-links">
+        {% for link in include.project.links %}
+          <a href="{{ link.url }}">{{ link.label }}</a>
+        {% endfor %}
+      </p>
+    {% endif %}
   </div>
 </article>

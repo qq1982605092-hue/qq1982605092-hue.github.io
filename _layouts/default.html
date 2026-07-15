@@ -3,7 +3,6 @@
   {% include head.html %}
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-
     <header class="masthead">
       <div class="masthead__inner">
         <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
@@ -14,14 +13,10 @@
         </nav>
       </div>
     </header>
-
-    <div class="page-shell">
-      <aside class="profile" aria-label="Author profile">
-        {% include author-profile.html %}
-      </aside>
-      <main id="main" class="content">
-        {{ content }}
-      </main>
-    </div>
+    <main id="main">{{ content }}</main>
+    <footer class="site-footer">
+      <span>Shu Cheng · East China Normal University</span>
+      <span>Research and engineering harnesses: Codex · Claude Code · Cursor</span>
+    </footer>
   </body>
 </html>

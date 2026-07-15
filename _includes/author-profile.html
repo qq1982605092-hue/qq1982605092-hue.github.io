@@ -1,18 +1,13 @@
-<div class="author-profile">
+<div class="hero-identity">
   <img
-    class="author-profile__portrait"
+    class="hero-portrait"
     src="{{ site.author.avatar | relative_url }}"
     alt="Portrait of {{ site.author.name | escape }}"
   >
-  <h1 class="author-profile__name">{{ site.author.name }}</h1>
-  <p class="author-profile__title">{{ site.author.title }}</p>
-  <p class="author-profile__affiliation">{{ site.author.affiliation }}</p>
-  <p class="author-profile__location">{{ site.author.location }}</p>
-  <ul class="author-profile__links">
-    <li><a href="mailto:{{ site.author.email }}" rel="noreferrer">{{ site.author.email }}</a></li>
-    <li>
-      <a href="https://github.com/{{ site.author.github }}" rel="noreferrer">GitHub</a>
-    </li>
-    <li><a href="{{ site.author.cv | relative_url }}">CV</a></li>
-  </ul>
+  <div class="hero-meta">
+    <strong>{{ site.author.name }}</strong>
+    <span>{{ site.author.title }}</span>
+    <span>{{ site.author.affiliation }}</span>
+    <span>{{ site.author.location }}</span>
+  </div>
 </div>
