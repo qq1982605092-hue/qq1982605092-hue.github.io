@@ -1,0 +1,39 @@
+- id: dual-time-memory
+  number: "01"
+  label: "Research in progress"
+  title: "Dual-Time Agent Memory"
+  diagram: "memory"
+  question: "How can an agent preserve what happened while also tracking how its knowledge changes?"
+  contributions:
+    - "Organizes interaction evidence across event time and knowledge-update time."
+    - "Studies temporal consistency, evidence traceability, and long-horizon recall."
+
+- id: calling-agent
+  number: "02"
+  label: "Agent systems"
+  title: "State-Driven AI Calling Agent"
+  diagram: "agent"
+  question: "How do we turn open-ended model behavior into an inspectable production workflow?"
+  contributions:
+    - "Separates dialogue stages, transition conditions, and external system actions."
+    - "Connects model post-training with controllable production integration."
+
+- id: qwen3-reranker
+  number: "03"
+  label: "Retrieval adaptation"
+  title: "Qwen3 Reranker Fine-tuning"
+  diagram: "ranking"
+  question: "How can a ranking model capture task-specific relevance beyond general semantic similarity?"
+  contributions:
+    - "Constructs domain-focused training data and evaluation cases for relevance ranking."
+    - "Uses retrieval error analysis to guide data and modeling revisions."
+
+- id: multimodal-perception
+  number: "04"
+  label: "Multimodal perception"
+  title: "Multimodal Structured Perception"
+  diagram: "perception"
+  question: "How can pixels and text become consistent records that a reasoning system can use?"
+  contributions:
+    - "Integrates OCR and vision-language components to extract complementary evidence."
+    - "Uses structured schemas and validation for reliable downstream consumption."
