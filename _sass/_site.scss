@@ -101,6 +101,13 @@ a:focus-visible {
   white-space: nowrap;
 }
 
+.site-nav a,
+.hero-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
 .site-nav a:hover,
 .site-nav a:focus-visible {
   color: var(--accent);
@@ -226,6 +233,10 @@ a:focus-visible {
   color: #9aa5ad;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.25rem;
+}
+
+.project-entry--text-only .project-copy {
+  grid-column: 2 / -1;
 }
 
 .project-visual {

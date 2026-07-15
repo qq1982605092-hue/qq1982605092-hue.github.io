@@ -1,11 +1,13 @@
-<article class="project-entry" id="project-{{ include.project.id }}">
+<article class="project-entry{% unless include.project.diagram %} project-entry--text-only{% endunless %}" id="project-{{ include.project.id }}">
   <div class="project-index" aria-hidden="true">{{ include.project.number }}</div>
-  <div
-    class="project-visual project-visual--{{ include.project.diagram }}"
-    aria-hidden="true"
-  >
-    <span></span><span></span><span></span><span></span>
-  </div>
+  {% if include.project.diagram %}
+    <div
+      class="project-visual project-visual--{{ include.project.diagram }}"
+      aria-hidden="true"
+    >
+      <span></span><span></span><span></span><span></span>
+    </div>
+  {% endif %}
   <div class="project-copy">
     <p class="project-label">{{ include.project.label }}</p>
     <h3>{{ include.project.title }}</h3>
@@ -15,7 +17,7 @@
         <li>{{ contribution }}</li>
       {% endfor %}
     </ul>
-    {% if include.project.links %}
+    {% if include.project.links and include.project.links != empty %}
       <p class="project-links">
         {% for link in include.project.links %}
           <a href="{{ link.url }}">{{ link.label }}</a>

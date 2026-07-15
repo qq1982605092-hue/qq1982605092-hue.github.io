@@ -33,6 +33,10 @@ class RedesignSourceContract(unittest.TestCase):
             "project-visual--{{ include.project.diagram }}", self.project
         )
         self.assertIn("include.project.contributions", self.project)
+        self.assertIn(
+            "include.project.links and include.project.links != empty", self.project
+        )
+        self.assertIn("unless include.project.diagram", self.project)
 
     def test_navigation_and_footer(self):
         self.assertIn('url: "/#research"', self.nav)
@@ -64,6 +68,9 @@ class RedesignSourceContract(unittest.TestCase):
         self.assertIn("@media (max-width: 760px)", self.scss)
         self.assertIn("@media (prefers-reduced-motion: reduce)", self.scss)
         self.assertIn("overflow-wrap: anywhere", self.scss)
+        self.assertIn("min-height: 44px", self.scss)
+        self.assertIn(".hero-links a", self.scss)
+        self.assertIn(".project-entry--text-only", self.scss)
 
 
 if __name__ == "__main__":
