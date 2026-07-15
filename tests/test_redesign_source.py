@@ -13,6 +13,7 @@ class RedesignSourceContract(unittest.TestCase):
         )
         cls.layout = (ROOT / "_layouts/default.html").read_text(encoding="utf-8")
         cls.nav = (ROOT / "_data/navigation.yml").read_text(encoding="utf-8")
+        cls.scss = (ROOT / "_sass/_site.scss").read_text(encoding="utf-8")
 
     def test_section_structure(self):
         for section_id in ("about", "selected-work", "research", "experience"):
@@ -44,6 +45,25 @@ class RedesignSourceContract(unittest.TestCase):
         self.assertIn("Nuanwa Technology", self.index)
         self.assertIn("Uceng Intelligence", self.index)
         self.assertNotIn("Fanhan", self.index)
+
+    def test_visual_components_have_explicit_styles(self):
+        for selector in (
+            ".hero",
+            ".project-entry",
+            ".project-visual",
+            ".project-visual--memory",
+            ".project-visual--agent",
+            ".project-visual--ranking",
+            ".project-visual--perception",
+            ".question-grid",
+            ".experience-focus",
+        ):
+            self.assertIn(selector, self.scss)
+
+    def test_mobile_and_motion_boundaries(self):
+        self.assertIn("@media (max-width: 760px)", self.scss)
+        self.assertIn("@media (prefers-reduced-motion: reduce)", self.scss)
+        self.assertIn("overflow-wrap: anywhere", self.scss)
 
 
 if __name__ == "__main__":
