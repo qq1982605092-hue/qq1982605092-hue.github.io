@@ -1,5 +1,6 @@
 ---
 layout: project
+permalink: "/projects/agent-memory/"
 title: "EvoWalker Agent Memory"
 kicker: "Research · Long-horizon agent memory"
 description: "A temporal memory graph and query-conditioned retrieval system for long-horizon agents."

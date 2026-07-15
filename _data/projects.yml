@@ -12,13 +12,13 @@
 - id: calling-agent
   number: "02"
   label: "Agent systems"
-  title: "State-Driven AI Calling Agent"
+  title: "Strategy-Driven AI Calling Agent"
   url: "/projects/calling-agent/"
   diagram: "agent"
   question: "How do we turn open-ended model behavior into an inspectable production workflow?"
   contributions:
-    - "Separates dialogue stages, transition conditions, and external system actions."
-    - "Connects model post-training with controllable production integration."
+    - "Builds an inspectable loop across Memory, strategy routing, constrained generation, and optional review."
+    - "Uses cached next-turn candidates, reranking, and a predictive fast path with a general fallback."
 
 - id: qwen3-reranker
   number: "03"

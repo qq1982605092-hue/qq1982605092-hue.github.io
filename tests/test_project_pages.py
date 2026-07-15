@@ -25,6 +25,14 @@ class ProjectPageContract(unittest.TestCase):
         for path in PROJECTS.values():
             self.assertTrue(path.is_file(), f"missing project page: {path}")
 
+        expected_permalinks = {
+            "agent_memory": 'permalink: "/projects/agent-memory/"',
+            "calling_agent": 'permalink: "/projects/calling-agent/"',
+            "reranker": 'permalink: "/projects/qwen3-reranker/"',
+        }
+        for name, permalink in expected_permalinks.items():
+            self.assertIn(permalink, self.read_project(name))
+
     def test_shared_layout_contract(self):
         layout = ROOT / "_layouts/project.html"
         self.assertTrue(layout.is_file(), "_layouts/project.html must exist")
@@ -148,6 +156,21 @@ class ProjectPageContract(unittest.TestCase):
         self.assertIn("include.project.url", component)
         self.assertIn("relative_url", component)
         self.assertIn("Read project", component)
+
+    def test_calling_agent_homepage_copy_matches_evidence(self):
+        data = (ROOT / "_data/projects.yml").read_text(encoding="utf-8")
+        calling = data.split("- id: calling-agent", 1)[1].split(
+            "- id: qwen3-reranker", 1
+        )[0]
+        self.assertIn('title: "Strategy-Driven AI Calling Agent"', calling)
+        self.assertIn("Memory, strategy routing, constrained generation", calling)
+        self.assertIn("predictive fast path", calling)
+        for phrase in (
+            "State-Driven",
+            "transition conditions",
+            "model post-training",
+        ):
+            self.assertNotIn(phrase, calling)
 
 
 if __name__ == "__main__":

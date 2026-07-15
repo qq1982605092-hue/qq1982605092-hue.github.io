@@ -17,7 +17,7 @@ class ProjectDataContract(unittest.TestCase):
             titles,
             [
                 "Dual-Time Agent Memory",
-                "State-Driven AI Calling Agent",
+                "Strategy-Driven AI Calling Agent",
                 "Qwen3 Reranker Fine-tuning",
                 "Multimodal Structured Perception",
             ],

@@ -1,5 +1,6 @@
 ---
 layout: project
+permalink: "/projects/qwen3-reranker/"
 title: "Qwen3 Reranker Fine-tuning"
 kicker: "Model post-training · Domain retrieval"
 description: "LoRA fine-tuning a Qwen3 reranker for domain-specific query-clause relevance."

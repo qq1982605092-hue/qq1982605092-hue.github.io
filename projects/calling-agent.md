@@ -1,5 +1,6 @@
 ---
 layout: project
+permalink: "/projects/calling-agent/"
 title: "Strategy-Driven AI Calling Agent"
 kicker: "Agent systems · Production orchestration"
 description: "A memory-aware conversational Agent with inspectable strategy routing and predictive fast-path inference."

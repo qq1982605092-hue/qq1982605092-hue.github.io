@@ -7,10 +7,21 @@ ROOT = Path(__file__).resolve().parents[1]
 class HomepageContract(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        output = ROOT / "_site/index.html"
-        if not output.is_file():
-            raise unittest.SkipTest("_site/index.html requires a successful Jekyll build")
-        cls.html = output.read_text(encoding="utf-8")
+        outputs = {
+            "home": ROOT / "_site/index.html",
+            "agent_memory": ROOT / "_site/projects/agent-memory/index.html",
+            "calling_agent": ROOT / "_site/projects/calling-agent/index.html",
+            "reranker": ROOT / "_site/projects/qwen3-reranker/index.html",
+        }
+        missing = [str(path.relative_to(ROOT)) for path in outputs.values() if not path.is_file()]
+        if missing:
+            raise unittest.SkipTest(
+                "complete rendered site required; missing " + ", ".join(missing)
+            )
+        cls.pages = {
+            name: path.read_text(encoding="utf-8") for name, path in outputs.items()
+        }
+        cls.html = cls.pages["home"]
 
     def test_identity_and_thesis(self):
         for text in (
@@ -30,7 +41,7 @@ class HomepageContract(unittest.TestCase):
     def test_projects_render_once(self):
         for title in (
             "Dual-Time Agent Memory",
-            "State-Driven AI Calling Agent",
+            "Strategy-Driven AI Calling Agent",
             "Qwen3 Reranker Fine-tuning",
             "Multimodal Structured Perception",
         ):
@@ -59,6 +70,12 @@ class HomepageContract(unittest.TestCase):
             "Code coming soon",
         ):
             self.assertNotIn(text, self.html)
+
+    def test_project_routes_render_expected_evidence(self):
+        self.assertIn("1,321 / 1,540", self.pages["agent_memory"])
+        self.assertIn("Strategy-Driven AI Calling Agent", self.pages["calling_agent"])
+        self.assertIn("Current data assets", self.pages["reranker"])
+        self.assertIn("Archived evaluation", self.pages["reranker"])
 
 
 if __name__ == "__main__":
