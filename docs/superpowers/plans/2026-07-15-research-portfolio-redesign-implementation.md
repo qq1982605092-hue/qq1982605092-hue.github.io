@@ -879,8 +879,8 @@ shasum -a 256 assets/images/profile/shu-cheng.png assets/files/Shu_Cheng_Resume.
 Expected hashes:
 
 ```text
-48f7589b7b3f00bcba6c86a6d8a070d65f548700f29d24da8f40109cd4b2a3f3  assets/images/profile/shu-cheng.png
-4f797a7932c88a1a04c70dd072a0e0a061642548af44fa68333900c2a19a856f  assets/files/Shu_Cheng_Resume.pdf
+48f7589bd67b5fe8bad4572c319d68141721c02ed935dfed1b313974828a3f3d  assets/images/profile/shu-cheng.png
+4f797a794ffad441e38d71ba87b14fbc1a37255b2f855c137b1badeadaba856f  assets/files/Shu_Cheng_Resume.pdf
 ```
 
 - [ ] **Step 7: Commit the verification contract and documentation**

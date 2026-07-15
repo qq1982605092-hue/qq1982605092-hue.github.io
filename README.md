@@ -8,6 +8,9 @@ Single-page Jekyll site for [qq1982605092-hue.github.io](https://qq1982605092-hu
 - `_layouts/default.html` and `_includes/` provide the shared page structure.
 - `_sass/_site.scss` contains the responsive layout and visual tokens; `assets/css/main.scss` imports it.
 - `_data/navigation.yml` controls the masthead links.
+- `_data/projects.yml` is the content source for Selected Work; keep two evidence-based contribution bullets per project.
+- `_includes/project-entry.html` renders each project and omits artifact links when none are verified.
+- Browser acceptance requires real 1440 px and 390 px screenshots after every major layout change.
 - `assets/images/profile/shu-cheng.png` is the supplied portrait.
 - `assets/files/Shu_Cheng_Resume.pdf` is the linked CV.
 
