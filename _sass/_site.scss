@@ -495,6 +495,230 @@ a:focus-visible {
   font-size: 0.76rem;
 }
 
+.project-page {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 1.5rem 7rem;
+}
+
+.project-hero {
+  padding: clamp(3.5rem, 7vw, 6.5rem) 0 4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-back {
+  display: inline-flex;
+  min-height: 44px;
+  margin-bottom: 2.6rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.project-hero h1 {
+  max-width: 920px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.project-thesis {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 5rem);
+  max-width: 980px;
+  margin-top: 3rem;
+}
+
+.project-thesis span,
+.project-facts dt,
+.diagram-label,
+.evidence-card span {
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-thesis p {
+  margin: 0.55rem 0 0;
+  color: #34434f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.45;
+}
+
+.project-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 3rem 0 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.project-facts div {
+  min-width: 0;
+  padding: 1.25rem 1.35rem;
+  background: var(--paper);
+}
+
+.project-facts dd {
+  margin: 0.3rem 0 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  overflow-wrap: anywhere;
+}
+
+.project-narrative {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-top: 4.5rem;
+}
+
+.project-narrative > h2 {
+  max-width: 760px;
+  margin: 4.5rem 0 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.project-narrative > h2:first-child {
+  margin-top: 0;
+}
+
+.project-narrative > p,
+.project-narrative > ul,
+.project-narrative > ol {
+  max-width: 720px;
+  color: #4d5b66;
+}
+
+.project-narrative > p {
+  font-size: 1.02rem;
+}
+
+.project-narrative strong {
+  color: var(--ink);
+}
+
+.system-diagram {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0 3rem;
+  padding: clamp(1.4rem, 4vw, 2.5rem);
+  background: var(--wash);
+  border: 1px solid #e6ebee;
+}
+
+.diagram-flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1.4rem;
+}
+
+.diagram-node {
+  position: relative;
+  display: flex;
+  min-height: 7.2rem;
+  padding: 1rem;
+  border: 1px solid #bdcbd4;
+  background: var(--paper);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.diagram-node:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -1.15rem;
+  top: 50%;
+  color: var(--accent-soft);
+  transform: translateY(-50%);
+}
+
+.diagram-node strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.diagram-node small {
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.diagram-node--accent {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.diagram-node--accent strong,
+.diagram-node--accent small {
+  color: var(--paper);
+}
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.evidence-card {
+  min-width: 0;
+  padding: 1.35rem;
+  border-top: 2px solid var(--accent);
+  background: var(--wash);
+}
+
+.evidence-card strong {
+  display: block;
+  margin-top: 0.45rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.1;
+}
+
+.evidence-card p {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.project-boundary,
+.project-next {
+  margin: 2.5rem 0;
+  padding: 1.6rem 1.8rem;
+  border-left: 3px solid var(--accent-soft);
+  background: #f7f9fa;
+}
+
+.project-boundary h3,
+.project-next h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+}
+
+.project-boundary p,
+.project-next p {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+}
+
 .site-footer {
   display: flex;
   max-width: var(--page-width);
@@ -592,6 +816,58 @@ a:focus-visible {
 
   .experience-focus {
     gap: 3.5rem;
+  }
+
+  .project-page {
+    padding: 0 1.1rem 5rem;
+  }
+
+  .project-hero {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .project-back {
+    margin-bottom: 1.8rem;
+  }
+
+  .project-hero h1 {
+    font-size: clamp(2.65rem, 13vw, 3.8rem);
+  }
+
+  .project-thesis,
+  .project-facts,
+  .evidence-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-thesis {
+    gap: 1.6rem;
+  }
+
+  .project-narrative {
+    padding-top: 3.5rem;
+  }
+
+  .project-narrative > h2 {
+    margin-top: 3.5rem;
+  }
+
+  .diagram-flow {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .diagram-node {
+    min-height: 6rem;
+  }
+
+  .diagram-node:not(:last-child)::after {
+    content: "↓";
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: -1.35rem;
+    transform: translateX(-50%);
   }
 
   .site-footer {

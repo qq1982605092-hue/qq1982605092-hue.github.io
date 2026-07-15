@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<article class="project-page">
+  <header class="project-hero">
+    <a class="project-back" href="{{ '/#selected-work' | relative_url }}">← Back to selected work</a>
+    <p class="eyebrow">{{ page.kicker }}</p>
+    <h1>{{ page.title }}</h1>
+    <div class="project-thesis">
+      <div>
+        <span>The question</span>
+        <p>{{ page.question }}</p>
+      </div>
+      <div>
+        <span>The short answer</span>
+        <p>{{ page.answer }}</p>
+      </div>
+    </div>
+    {% if page.facts %}
+      <dl class="project-facts">
+        {% for fact in page.facts %}
+          <div>
+            <dt>{{ fact.label }}</dt>
+            <dd>{{ fact.value }}</dd>
+          </div>
+        {% endfor %}
+      </dl>
+    {% endif %}
+  </header>
+
+  <div class="project-narrative">
+    {{ content }}
+  </div>
+</article>
