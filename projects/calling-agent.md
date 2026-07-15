@@ -64,4 +64,3 @@ The replay artifact is the core engineering evidence: it turns a multi-module Ag
   <h3>Keep policy and execution inspectable</h3>
   <p>A robot policy also needs memory, action selection, execution constraints, and a recovery route when a prediction fails. This project gives me an engineering vocabulary for those boundaries: observable state, explicit routing, bounded generation, and replayable decisions.</p>
 </div>
-

@@ -66,4 +66,3 @@ The category pattern is itself useful: single-hop recall is comparatively stable
   <h3>From conversational memory to persistent world state</h3>
   <p>Embodied agents face the same underlying problem at a harder scale: an observation may become outdated, an instruction may refer to an earlier event, and a decision should remain traceable to the evidence that supported it. The next step is to replace dialogue-only facts with multimodal events and test whether temporal validity and query-conditioned traversal improve long-horizon task completion.</p>
 </div>
-

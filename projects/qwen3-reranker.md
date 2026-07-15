@@ -62,4 +62,3 @@ The archived checkpoint result is **not a current-data evaluation**. Keeping tha
   <h3>Make data design measurable</h3>
   <p>The next controlled study is to hold model and training budget constant while varying negative construction: random negatives, lexical confounders, and retrieval-derived hard negatives. That would turn the current error-analysis intuition into a defensible claim about which training examples improve ranking.</p>
 </div>
-
