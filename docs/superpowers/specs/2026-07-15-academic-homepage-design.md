@@ -50,7 +50,8 @@ Single-page sections appear in this order:
 
 ### Identity sidebar
 
-- Portrait
+- User-provided portrait at `assets/images/profile/shu-cheng.png`; preserve the
+  source image and use CSS `object-fit` positioning for the sidebar crop
 - Shu Cheng (舒橙)
 - M.S. Student in Computer Science
 - East China Normal University
@@ -158,4 +159,3 @@ Before publication:
 - No Honors, Talks, Service, Blog, dark mode, bilingual toggle, or visitor analytics.
 - No unfinished ManiSkill, LeRobot, OpenVLA, or Memory-enhanced VLA project presented as completed work.
 - No skill grid or résumé-style wall of technologies.
-
