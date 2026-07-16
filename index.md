@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-<section id="about" class="hero">
+<section class="hero">
   <div class="hero-copy">
     <p class="eyebrow">MEMORY · AGENTS · EMBODIED AI</p>
     <h1 class="hero-name">Cheng Shu</h1>
@@ -17,6 +17,14 @@ title: Home
     </p>
   </div>
   {% include author-profile.html %}
+</section>
+
+<section id="about" class="page-section about-section">
+  <p class="about-label">About</p>
+  <div class="about-copy">
+    <p>I’m an M.S. student in Computer Science at <strong>East China Normal University</strong>, working at the intersection of agent memory, model post-training, and multimodal systems. My central question is how an agent can retain useful experience, make inspectable decisions, and eventually turn perception into reliable action over long horizons.</p>
+    <p>At <strong>Nuanwa Technology</strong>, I build state-driven agent workflows and task-specific model adaptation pipelines. Earlier, at <strong>Uceng Intelligence</strong>, I connected industrial vision outputs with downstream production and control systems, gaining experience across the loop from perception to physical execution. I’m now exploring how these pieces can support <strong>memory-augmented embodied agents</strong>.</p>
+  </div>
 </section>
 
 <section id="selected-work" class="page-section selected-work">
@@ -59,7 +67,7 @@ title: Home
   </div>
   <div class="current-focus">
     <h2>Current focus</h2>
-    <p>I am exploring how memory and post-training can support agents that operate across long horizons, perceive structured environments, and eventually learn to act in embodied settings.</p>
+    <p>I am now focused on turning these foundations into memory-augmented agents that can reason and act reliably over long horizons.</p>
     <p class="focus-tags"><span>Agent Memory</span><span>Post-training</span><span>Retrieval</span><span>Multimodal Systems</span><span>Embodied AI</span></p>
   </div>
 </section>
