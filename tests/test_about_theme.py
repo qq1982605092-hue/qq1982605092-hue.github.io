@@ -76,6 +76,8 @@ class AboutThemeContract(unittest.TestCase):
             ".about-copy",
         ):
             self.assertIn(selector, self.scss)
+        self.assertIn("@media (prefers-color-scheme: dark)", self.scss)
+        self.assertIn(":root:not([data-theme])", self.scss)
         self.assertIn("prefers-reduced-motion: reduce", self.scss)
 
 
