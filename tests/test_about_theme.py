@@ -1,3 +1,4 @@
+import re
 import unittest
 from pathlib import Path
 
@@ -12,11 +13,24 @@ class AboutThemeContract(unittest.TestCase):
         cls.layout = (ROOT / "_layouts/default.html").read_text(encoding="utf-8")
         cls.scss = (ROOT / "_sass/_site.scss").read_text(encoding="utf-8")
 
+    def about_copy(self):
+        matches = re.findall(
+            r'<([a-z][\w-]*)[^>]*class="about-copy"[^>]*>(.*?)</\1>',
+            self.index,
+            flags=re.DOTALL,
+        )
+        self.assertEqual(len(matches), 1)
+        return matches[0][1]
+
     def test_about_is_a_distinct_editorial_section(self):
         self.assertIn('<section id="about" class="page-section about-section">', self.index)
         self.assertNotIn('<section id="about" class="hero">', self.index)
         self.assertIn('class="about-label">About</p>', self.index)
         self.assertEqual(self.index.count('class="about-copy"'), 1)
+        about_copy = self.about_copy()
+        paragraphs = re.findall(r"<p(?:\s[^>]*)?>.*?</p>", about_copy, flags=re.DOTALL)
+        self.assertEqual(len(paragraphs), 2)
+        self.assertEqual(len(re.findall(r"<p(?:\s[^>]*)?>", about_copy)), 2)
 
     def test_about_tells_a_bounded_research_story(self):
         for text in (
@@ -26,8 +40,18 @@ class AboutThemeContract(unittest.TestCase):
             "memory-augmented embodied agents",
         ):
             self.assertIn(text, self.index)
-        for unsupported in ("real-robot", "foundation-model research", "ten-thousand-GPU"):
-            self.assertNotIn(unsupported, self.index)
+        about_copy = self.about_copy().lower()
+        for unsupported_pattern in (
+            r"\bvlas?\b",
+            r"\bvision[ -]language[ -]action\b",
+            r"\breinforcement[ -]learning\b",
+            r"\brobot[ -]foundation[ -]models?\b",
+            r"\breal[ -]robots?\b",
+            r"\bphysical[ -]robots?\b",
+            r"\bfoundation[ -]model research\b",
+            r"\bten[ -]thousand[ -]gpus?\b",
+        ):
+            self.assertNotRegex(about_copy, unsupported_pattern)
 
     def test_theme_bootstraps_before_paint(self):
         self.assertIn('localStorage.getItem("site-theme")', self.head)
