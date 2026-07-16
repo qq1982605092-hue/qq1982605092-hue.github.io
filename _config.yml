@@ -1,17 +1,17 @@
 locale: en-US
-title: "Shu Cheng"
+title: "Cheng Shu"
 description: "Memory and reasoning systems for embodied agents."
-url: "https://qq1982605092-hue.github.io"
+url: "https://chengshu-ai.github.io"
 baseurl: ""
-repository: "qq1982605092-hue/qq1982605092-hue.github.io"
+repository: "chengshu-ai/chengshu-ai.github.io"
 markdown: kramdown
 author:
-  name: "Shu Cheng (舒橙)"
+  name: "Cheng Shu"
   title: "M.S. Student in Computer Science"
   affiliation: "East China Normal University"
   location: "Shanghai, China"
   avatar: "/assets/images/profile/shu-cheng.png"
   email: "18074599386@163.com"
-  github: "qq1982605092-hue"
+  github: "chengshu-ai"
   cv: "/assets/files/Shu_Cheng_Resume.pdf"
 exclude: [tests, docs, README.md]

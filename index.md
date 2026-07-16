@@ -6,7 +6,7 @@ title: Home
 <section id="about" class="hero">
   <div class="hero-copy">
     <p class="eyebrow">MEMORY · AGENTS · EMBODIED AI</p>
-    <h1 class="hero-name">Shu Cheng</h1>
+    <h1 class="hero-name">Cheng Shu</h1>
     <p class="hero-topics">Agent memory · model post-training · multimodal systems</p>
     <p class="hero-statement">I build memory and reasoning systems for long-horizon agents — and study how these capabilities can support embodied intelligence.</p>
     <p class="hero-links">

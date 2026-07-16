@@ -23,7 +23,8 @@ class RedesignSourceContract(unittest.TestCase):
 
     def test_research_narrative(self):
         self.assertIn("MEMORY · AGENTS · EMBODIED AI", self.index)
-        self.assertIn("Shu Cheng", self.index)
+        self.assertIn("Cheng Shu", self.index)
+        self.assertNotIn("Shu Cheng", self.index)
         self.assertIn("memory and reasoning systems for long-horizon agents", self.index)
         self.assertIn("site.data.projects", self.index)
         self.assertIn("Questions I care about", self.index)

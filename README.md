@@ -1,6 +1,6 @@
-# Shu Cheng academic homepage
+# Cheng Shu academic homepage
 
-Single-page Jekyll site for [qq1982605092-hue.github.io](https://qq1982605092-hue.github.io/), published from the `main` branch root.
+Single-page Jekyll site for [chengshu-ai.github.io](https://chengshu-ai.github.io/), published from the `main` branch root.
 
 ## Maintenance map
 
@@ -36,4 +36,4 @@ git diff --check
 
 ## Attribution
 
-The layout structure is adapted from the MIT-licensed academic homepage pattern by Hao Shi. The MIT notice is retained in `LICENSE`; Shu Cheng's text, portrait, and project assets are personal material and are not covered by the template license.
+The layout structure is adapted from the MIT-licensed academic homepage pattern by Hao Shi. The MIT notice is retained in `LICENSE`; Cheng Shu's text, portrait, and project assets are personal material and are not covered by the template license.

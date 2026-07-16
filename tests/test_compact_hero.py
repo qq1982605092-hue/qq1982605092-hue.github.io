@@ -17,10 +17,11 @@ class CompactHeroContract(unittest.TestCase):
     def test_compact_research_hierarchy(self):
         for text in (
             "MEMORY · AGENTS · EMBODIED AI",
-            "Shu Cheng",
+            "Cheng Shu",
             "Agent memory · model post-training · multimodal systems",
         ):
             self.assertIn(text, self.index)
+        self.assertNotIn("Shu Cheng", self.index)
         self.assertNotIn("舒橙", self.index)
         self.assertNotIn("Systems that help agents", self.index)
         self.assertNotIn("site.author.title", self.profile)
